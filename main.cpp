@@ -44,19 +44,19 @@ int IntegersExample();
 int main()
 {
 	//// functions begin ////
-	//SimpleAdd();
-	//AddEquals();
-	//IncrementOp();
-	//SimpleIf();
-	//SimplElse();
-	//WhileLoop();
-	//LogicOp();
-	//SimpleForLoop();
-	//StockMarketLoop();
-	//DoWhileLoop();
-	//SwitchEx();
-	//TwoAndOp();
-	//IntegersExample();
+	SimpleAdd();
+	AddEquals();
+	IncrementOp();
+	SimpleIf();
+	SimplElse();
+	WhileLoop();
+	LogicOp();
+	SimpleForLoop();
+	StockMarketLoop();
+	DoWhileLoop();
+	SwitchEx();
+	TwoAndOp();
+	IntegersExample();
 	/////////////////////////
 
 	// Class' hold functions which hold code.
