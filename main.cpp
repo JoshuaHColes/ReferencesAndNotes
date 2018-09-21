@@ -44,19 +44,19 @@ int ArrayEx();
 int main()
 {
     //// functions begin ////
-    //SimpleAdd();
-    //AddEquals();
-    //IncrementOp();
-    //SimpleIf();
-    //SimplElse();
-    //WhileLoop();
-    //LogicOp();
-    //SimpleForLoop();
-    //StockMarketLoop();
-    //DoWhileLoop();
-    //SwitchEx();
-    //TwoAndOp();
-    //IntegersExample();
+    SimpleAdd();
+    AddEquals();
+    IncrementOp();
+    SimpleIf();
+    SimplElse();
+    WhileLoop();
+    LogicOp();
+    SimpleForLoop();
+    StockMarketLoop();
+    DoWhileLoop();
+    SwitchEx();
+    TwoAndOp();
+    IntegersExample();
     ArrayEx();
     /////////////////////////
 
