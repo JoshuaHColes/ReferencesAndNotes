@@ -13,13 +13,26 @@ using namespace std; // don't use in future projects
 
 
 // class must be above "main"
+/* main calls to a constructor in the class ---> string 'z' defined in constructor ---> PublicFunc' assigned var 'z'
+   ---> 'x' defined in 'PublicFunc' and assigned to 'PrivString' variable ---> 'PrivString' is returned in GetString */
 class TestClass
 {
-public:
-    void PrintFunc()
-    {
-        cout << "This Is A Class" << endl << endl;
-    }
+    public:
+        TestClass(std::string z) // constructor. Usually used to give variable a value
+        {
+            PublicFunc(z);
+        }
+        void PublicFunc(std::string x)
+        {
+            PrivString = x;
+        }
+        std::string GetString()
+        {
+            return PrivString;
+        }
+
+    private:
+        std::string PrivString; // defines the function and can't be accessed outside of the class until called properly
 };
 
 
@@ -38,6 +51,7 @@ int SwitchEx();
 int TwoAndOp();
 int IntegersExample();
 int ArrayEx();
+int PntrsEx();
 
 
 // runs code in sequence
@@ -58,11 +72,16 @@ int main()
     TwoAndOp();
     IntegersExample();
     ArrayEx();
+    PntrsEx();
     /////////////////////////
 
+    string TestVar = "main calls to a constructor in the class ---> string 'z' defined in constructor ---> PublicFunc' assigned var 'z' ---> 'x' defined in 'PublicFunc' and assigned to 'PrivString' variable ---> 'PrivString' is returned in GetString";
+
     // Class' hold functions which hold code.
-    //TestClass TestObject;
-    //TestObject.PrintFunc();
+    TestClass TestObject(TestVar);
+    TestObject.GetString();
+
+    std::cout << std::endl << TestObject.GetString() << std::endl << std::endl;
 
     //system("pause"); // stops run window from clossing down until user says so
     return 0;
@@ -237,7 +256,7 @@ int DoWhileLoop()
 {
     int a;
 
-    cout << "'Do While Loop' Example." << endl << endl << "Enter a number. The computer will count up to 10 from the number you input. Any Input bigger than 9 will return that input only once: ";
+    cout << "'Do While Loop' Example.\n\n" << "Enter a number. The computer will count up to 10 from the number you input. Any Input bigger than 9 will return that input only once: ";
     cin >> a;
     cout << endl << "You entered: ";
 
@@ -290,7 +309,7 @@ int TwoAndOp()
 
     if (age < 16)
     {
-        cout << endl << "Nothing" << endl << endl;
+        cout << endl << "Nothing\n\n" << endl << endl;
     }
     if (age >= 16 && age < 18) // && allows for inbetween values to be entered and evaluated
     {
@@ -333,7 +352,7 @@ int ArrayEx()
 
     int MyArr[5];
 
-    cout << "Array For Loop:\n";
+    cout << "Array For Loop:\n\n";
 
     for(int x = 0; x < 5; x++) {
       cout << x << ":" << MyArr[4] << endl;
@@ -341,6 +360,23 @@ int ArrayEx()
 
     int Arr[2][3] = { {2, 3, 4}, {8, 9, 10} };
     cout << endl << Arr[0][2] << endl << endl;
+
+    return 0;
+}
+
+
+int PntrsEx()
+{
+    // example 1:
+    int x = 25;
+    int* p = &x; // '*p' is an alias for 'x'
+    cout << endl << p << endl << endl; // &var is used to find the address of a variable. In this case we are finding the address of 'x'
+    cout << *p << endl << endl; // *var is used to get the value of the address held by the pointer, in this case 'p' is the pointer
+
+    // example 2:
+    int Score = 5;
+    int* ScorePtr = &Score; // the pointer 'ScorePtr' is assigned the address/memory allocation of 'Score' (&Score)
+    cout << ScorePtr << endl << endl; // the pointer is printed
 
     return 0;
 }
